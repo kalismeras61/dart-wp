@@ -224,7 +224,7 @@ class Post {
       permalinkTemplate: map['permalink_template'],
       generatedSlug: map['generated_slug'],
       title: Utils.renderHtml(map['title']['rendered']),
-      content: Utils.renderHtml(map['content']['rendered']),
+      content: map['content']['rendered'],
       author: map['author'],
       excerpt: Utils.renderHtml(map['excerpt']['rendered']),
       featuredMedia: map['featured_media'],
