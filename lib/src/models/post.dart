@@ -85,6 +85,8 @@ class Post {
   ///The theme file to use to display the object.
   final String? template;
 
+  final String? featuredImage;
+
   ///The terms assigned to the object in the category taxonomy.
   final List<int>? categories;
 
@@ -117,6 +119,7 @@ class Post {
     this.template,
     this.categories,
     this.tags,
+    this.featuredImage,
   });
 
   Post copyWith({
@@ -146,6 +149,7 @@ class Post {
     String? template,
     List<int>? categories,
     List<int>? tags,
+    String? featuredImage,
   }) {
     return Post(
       date: date ?? this.date,
@@ -174,6 +178,7 @@ class Post {
       template: template ?? this.template,
       categories: categories ?? this.categories,
       tags: tags ?? this.tags,
+      featuredImage: featuredImage ?? this.featuredImage,
     );
   }
 
@@ -205,6 +210,7 @@ class Post {
       'template': template,
       'categories': categories,
       'tags': tags,
+      'featuredImage': featuredImage,
     };
   }
 
@@ -232,11 +238,13 @@ class Post {
       pingStatus: map['ping_status'],
       format: map['format'],
       meta: map['meta'],
+
       sticky: map['sticky'],
       template: map['template'],
       categories: List<int>.from(map['categories']),
       tags: List<int>.from(map['tags']),
       // embedded: Embedded?.fromMap(map['_embedded']),
+      featuredImage: map['featured-image'],
     );
   }
 
